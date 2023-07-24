@@ -1,0 +1,139 @@
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.content {
+  max-width: 800px; 
+}
+
+section {
+  margin-bottom: 30px;
+}
+
+h2 {
+  color: teal;
+}
+
+ul {
+  list-style-type: disc;
+  padding-left: 20px;
+}
+
+li {
+  margin-bottom: 5px;
+}
+
+p {
+  margin-bottom: 15px;
+}
+
+
+footer {
+  background-color: #0f7a86;
+  color: #fff;
+  padding: 10px;
+  text-align: center;
+}
+
+footer p {
+  margin: 0;
+}
+
+body, h1, h2, p, ul, li {
+  margin: 0;
+  padding: 0;
+}
+
+
+body {
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+
+header {
+  background-color: teal;
+
+  background-blend-mode: darken;
+  background-size:10%;
+  padding: 100px;
+  
+}
+
+.top-bar {
+  display:flex ;
+  justify-content: space-between;
+  align-items:center;
+}
+.logo {
+  margin-top: 0px;
+}
+.login-signup {
+  margin-right: 20px;
+}
+
+.button {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: white;
+  color: teal;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+nav {
+  background-color: rgba(255, 255, 255, 0.959);
+  padding: 13px;
+  justify-content: space-around;
+  
+}
+
+nav ul {
+  list-style-type: none;
+  text-align: center;
+  display:flex;
+
+  justify-content: space-around;
+
+  
+}
+
+nav ul li {
+  
+  margin-left: 20px;
+  list-style: none;
+}
+
+nav ul li a {
+  color: rgb(12, 119, 119);
+  text-decoration: none;
+  letter-spacing: 3px;
+
+  font-weight: bold;
+
+  font-size: 14px;
+
+  padding: 14px 16px;
+}
+nav ul li a:hover:not(.active) {
+
+background-color: lightseagreen;
+  text-transform: beige;}
+       nav ul li a.active {
+
+    background-color: #4cafaf;
+  
+  }
+  
+   
+  
+  
+  
+  
+  

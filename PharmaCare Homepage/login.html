@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Login</title>
+  <link rel="stylesheet" type="text/css" href="login.css">
+</head>
+<body>
+  <br>
+  <br>
+  <div class="cont">
+    <div class="form sign-in">
+      <h2>WELCOME BACK</h2>
+      <form action="loginuser.php" method="POST"> 
+      <label>
+        <span>USERNAME</span>
+        <input type="text" name="username" />
+      </label>
+      <label>
+        <span>Password</span>
+        <input type="password" name="password" />
+      </label>
+      <div class="radio-group">
+        <label>
+          <input type="radio" name="loginType" value="patient" checked>
+          <span>Patient</span>
+        </label>
+        <label>
+          <input type="radio" name="loginType" value="doctor">
+          <span>Doctor</span>
+        </label>
+        <label>
+          <input type="radio" name="loginType" value="pharmacist">
+          <span>Pharmacist</span>
+        </label>
+        <label>
+          <input type="radio" name="loginType" value="administrator">
+          <span>Administrator</span>
+        </label>
+      </div>
+      
+      <button type="submit" class="submit">Sign In</button>
+    </form>
+    </div>
+    <div class="sub-cont">
+      <div class="img">
+        <div class="img__text m--up">
+          <h3>Don't have an account?<br> Sign up!</h3>
+        </div>
+       
+        <a href="register.html" class="img__btn m--up">Sign Up</a>
+        <a href="#" class="img__btn m--in">Sign In</a>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
