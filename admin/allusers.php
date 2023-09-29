@@ -1,6 +1,6 @@
 <?php
 session_start(); 
-require_once("dbconnect.php");
+require_once("../dbconnect.php");
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if (isset($_POST['search_btn'])) {
@@ -67,32 +67,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 }
 ?>
-<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="UTF-8">
-  <title>Admin Page</title>
-  <link rel="stylesheet" type="text/css" href="allusers.css">
-</head>
-<body>
-  <header>
-    <div class="top-bar">
-      <div class="logo">
-        <img src="0.png" alt="Logo">
-      </div>
-      <div class="admin-info">
-        <h2>Welcome back, <?php echo $_SESSION['username']; ?>!</h2>
-      </div>
-    </div>
-    <nav>
-      <ul>
-        <li><a href="adminpage.php">Home</a></li>
-        <li><a href="drugmodify.php">Products</a></li>
-        <li><a href="allusers.php">Users</a></li>
-        <li><a href="logout.php">Logout</a></li>
-      </ul>
-    </nav>
-  </header>
+<?php 
+$pageTitle = "Users";
+include ('adminheader.php');?>
     <body>
 
     <section class="search-users-section">

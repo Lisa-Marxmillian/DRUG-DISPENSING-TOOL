@@ -13,7 +13,7 @@ session_start();
   <header>
     <div class="top-bar">
       <div class="logo">
-        <img src="0.png" alt="Logo" >
+        <img src="../graphics/0.png" alt="Logo" >
       </div>
       <div class="patientinfo">
       Welcome, <?php echo $_SESSION['username']; ?>!
@@ -40,7 +40,7 @@ session_start();
     <h1>Medication</h1>
     <div class="product-grid">
       <?php
-      require_once("dbconnect.php");
+      require_once("../dbconnect.php");
 
       $search_query = "";
       if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -55,23 +55,26 @@ session_start();
       $result = mysqli_query($conn, $sql);
 
       if ($result === false) {
-        die("Query execution failed: " . mysqli_error($conn));
+          die("Query execution failed: " . mysqli_error($conn));
       }
-
+      
       if (mysqli_num_rows($result) > 0) {
-        while ($row = mysqli_fetch_assoc($result)) {
-          echo '<div class="product-card">';
-          echo '<h2>' . $row['TradeName'] . '</h2>';
-          echo '<p>Price: KES ' . $row['price'] . '</p>';
-          echo '</div>';
-        }
+          while ($row = mysqli_fetch_assoc($result)) {
+              echo '<div class="product-card">';
+              echo '<h2>' . $row['TradeName'] . '</h2>';
+              echo '<img src="' . $row['image_url'] . '" alt="' . $row['TradeName'] . '" />';
+              echo '<p>Price: KES ' . $row['price'] . '</p>';
+              echo '<button class="view-details-btn">View Details</button>';
+              echo '</div>';
+          }
       } else {
-        echo '<p>No products found.</p>';
+          echo '<p>No products found.</p>';
       }
-
+      
       mysqli_close($conn);
       ?>
-    </div>
+      </div>
+      
   </main>
 
   <footer>

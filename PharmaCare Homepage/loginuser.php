@@ -1,7 +1,8 @@
 <?php
 session_start();
-require_once("dbconnect.php");
+require_once("../dbconnect.php");
 
+// Check if username, password, and loginType are set
 $username = $_POST['username'];
 $password = $_POST['password'];
 $loginType = $_POST['loginType'];
@@ -29,24 +30,35 @@ if ($result->num_rows == 1) {
         $_SESSION['username'] = $username;
         $_SESSION['loginType'] = $loginType;
 
-        if ($loginType == 'patient') {
-            header("Location: patientpage.php");
-            exit;
-        } elseif ($loginType == 'doctor') {
-            header("Location: doctorpage.php");
-            exit;
-        } elseif ($loginType == 'pharmacist') {
-            header("Location: pharmacistpage.php");
-            exit;
-        } elseif ($loginType == 'administrator') {
-            header("Location: adminpage.php");
+            // Redirect to appropriate page
+            switch ($loginType) {
+                case 'patient':
+                    header("Location: ../patient/patientpage.php");
+                    exit;
+                case 'doctor':
+                    header("Location: ../doctor/doctorpage.php");
+                    exit;
+                case 'pharmacist':
+                    header("Location: ../pharmacist/pharmacistpage.php");
+                    exit;
+                case 'administrator':
+                    header("Location: ../admin/adminpage.php");
+                    exit;
+            }
+        } else {
+            $_SESSION['login_error_message'] = "Incorrect password.";
+            header("Location: error.php");
             exit;
         }
+    } else {
+        $_SESSION['login_error_message'] = "User not found.";
+        header("Location: error.php");
+        exit;
     }
-}
 
-echo "Invalid username or password.";
+    $stmt->close();
+    $conn->close();
 
-$stmt->close();
-$conn->close();
 ?>
+
+
