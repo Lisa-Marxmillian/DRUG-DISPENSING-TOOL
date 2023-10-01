@@ -2,33 +2,14 @@
 <html>
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Drug Dispensing Website</title>
   <link rel="stylesheet" type="text/css" href="styles.css">
   
 </head>
 <body>
-  <header>
-    <div class="top-bar">
-      <div class="logo">
-        <img src="0.png" alt="Logo" >
-      </div>
-      <div class="login-signup">
-        <a href="http://localhost/projectfolder/drugdispensing/login.html" class="button">Login</a>
-      </div>
-    </div>
-    <nav>
-      <ul>
-        <li><a href="drug dispenser.html">Home</a></li>
-        <li><a href="Aboutus.html">About Us</a></li>
-        <li><a href="Events.html">Events</a></li>
-        <li><a href="contact.html">Contact Us</a></li>
-      
-        </ul>
-      </nav>
-  
-    
-  </header>
-  
+<?php include "header.php"; ?>
+
   <main>
     
     <div class="content">
@@ -64,8 +45,6 @@
     </section>
   </main>
 </div>
-  <footer>
-    <p>&copy; 2023 Drug Dispensing Website. All rights reserved.</p>
-  </footer>
+  <?php include "footer.php" ?>
 </body>
 </html>

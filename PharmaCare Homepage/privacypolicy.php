@@ -4,14 +4,13 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>PharmaCare - Privacy Policy</title>
-  <link rel="stylesheet" href="termsandconditions.css">
+  <link rel="stylesheet" href="Events.css">
 </head>
 <body>
-  <header>
-    <h1>Privacy Policy</h1>
-  </header>
+  <?php include "header.php"; ?>
   
   <main>
+    <h1>Privacy Policy</h1>
     <section>
       <h2>Information We Collect</h2>
       <p>When you use the Drug Dispensing Tool, we may collect the following information:</p>
@@ -65,8 +64,6 @@
     </section>
   </main>
 
-  <footer>
-    <p>&copy; 2023 Drug Dispensing Website. All rights reserved.</p>
-  </footer>
+  <?php include "footer.php"; ?>
 </body>
 </html>

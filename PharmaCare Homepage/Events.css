@@ -103,7 +103,8 @@ nav ul li a:hover:not(.active) {
     padding: 20px;
     margin-bottom: 20px;
   }
-  
+    
+
   footer {
     background-color: #0f7a86;
     color: #fff;
@@ -114,4 +115,3 @@ nav ul li a:hover:not(.active) {
   footer p {
     margin: 0;
   }
-  

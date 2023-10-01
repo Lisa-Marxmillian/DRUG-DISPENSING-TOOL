@@ -1,6 +1,6 @@
 <?php
 session_start(); 
-require_once("dbconnect.php");
+require_once("../dbconnect.php");
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   $patientname = $_POST['patientname'];
@@ -157,7 +157,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   
 }}}?>
 
-  <footer>
-  </footer>
+<?php include "footer.php" ?>
 </body>
 </html>

@@ -4,43 +4,11 @@
   <meta charset="UTF-8">
   <title>Drug Dispensing Website</title>
   <link rel="stylesheet" type="text/css" href="styles.css">
-  
 </head>
-<body>
-  <header>
-    <div class="top-bar">
-      <div class="logo">
-        <img src="../graphics/0.png" alt="Logo" >
-      </div>
-      <div class="login-signup">
-        <a href="login.html" class="button">Login</a>
-      </div>
-    </div>
-    <nav>
-      <ul>
-          <li><a href="drug dispenser.html">Home</a></li>
-          <li><a href="Aboutus.html">About Us</a></li>
-          <li><a href="Events.html">Events</a></li>
-          <li><a href="contact.html">Contact Us</a></li>
-        
-        </ul>
-      </nav>
- 
-</div>
-<div class="hero">
-  <div class="hero-content">
-    <h1>Healthcare Made Easy</h1>
-    <h2>Get Prescription Medicines with Ease</h2>
-    <a href="register.html" class="cta-button">Get Started</a>
-  </div>
-  <div class="hero-image">
-    <img src="../graphics/2.png" alt= "Header Image"style="width: 500px; height: auto;">
-       </div>
-    </div>
-  </header>
-  
+<body> 
 
-  
+<?php include "header(homepage).php"; ?>
+
   <main>
     <section class="benefit-statement">
       <h2>WHY CHOOSE US ?</h2>
@@ -111,29 +79,7 @@
     </div>
  
   </main>
-  
-  <footer>
-    <div class="footer-column">
-      <div class="contact-info">
-        <h2>Contact Us</h2>
-        <p>123 Kilimani, Nairobi</p>
-        <p>Phone: (123) 456-7890</p>
-        <p>Email: info@pharmacare.com</p>
-      </div>
-      <div class="footer-links">
-        <a href="termsandconditions.html">Terms and Conditions</a>
-        <a href="Events.html">Events</a>
-        <a href="privacypolicy.html">Privacy Policy</a>
-      </div>
-    </div>
-    <div class="footer-column">
-      <div class="offers">
-        <h2>Special Offers</h2>
-        <p>Subscribe to our newsletter and get exclusive discounts.</p>
-        <a href="#" class="cta-button">Subscribe</a>
-      </div>
-      <p>&copy; 2023 Drug Dispensing Website. All rights reserved.</p>
-    </div>
-  </footer>
+  <?php include "footer.php" ?>
 </body>
 </html>
+

@@ -1,7 +1,7 @@
 <?php
 session_start(); 
 
-require_once("dbconnect.php");
+require_once("../dbconnect.php");
 $username = $_SESSION['username'];
 
 $sql = "SELECT * FROM appointments WHERE DoctorID = '$username'";
@@ -70,7 +70,6 @@ $result = mysqli_query($conn, $sql);
   </div>
   </section>
 
-  <footer>
-  </footer>
+  <?php include "footer.php" ?>
 </body>
 </html>

@@ -1,6 +1,6 @@
 <?php
 session_start(); 
-require_once("dbconnect.php");
+require_once("../dbconnect.php");
 $username = $_SESSION['username']; 
 $resultsPerPage =3; 
 $currentpage = isset($_GET['page']) ? $_GET['page'] : 1; 
