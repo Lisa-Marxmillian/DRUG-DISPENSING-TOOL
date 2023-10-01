@@ -2,9 +2,9 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>PharmaCare - Events</title>
-  <link rel="stylesheet" href="Aboutus.css">
+  <link rel="stylesheet" href="Events.css">
 </head>
 <body>
   

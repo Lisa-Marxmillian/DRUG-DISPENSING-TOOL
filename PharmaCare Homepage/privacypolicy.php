@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>PharmaCare - Privacy Policy</title>
-  <link rel="stylesheet" href="Events.css">
+  <link rel="stylesheet" href="termsandconditions.css">
 </head>
 <body>
   <?php include "header.php"; ?>
