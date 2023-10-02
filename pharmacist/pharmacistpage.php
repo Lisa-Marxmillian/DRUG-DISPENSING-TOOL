@@ -1,7 +1,7 @@
 <?php
 session_start(); 
 
-require_once("dbconnect.php");
+require_once("../dbconnect.php");
 
 $sql = "SELECT * FROM prescription";
 $result = mysqli_query($conn, $sql);
@@ -66,7 +66,6 @@ $result = mysqli_query($conn, $sql);
         </table>
     </section>
 
-    <footer>
-    </footer>
+    <?php include "../PharmaCare Homepage/footer.php" ?>  
 </body>
 </html>

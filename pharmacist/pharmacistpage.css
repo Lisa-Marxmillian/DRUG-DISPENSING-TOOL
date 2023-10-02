@@ -93,8 +93,30 @@ thead {
   background-color: #f5f5f5;
 }
 
+
 footer {
-  background-color: #f5f5f5;
+  background-color: teal;
+  color: #fff;
   padding: 20px;
   text-align: center;
+}
+
+.footer-links {
+  display: flex;
+  flex-direction: column;
+ 
+}
+
+.footer-links a {
+  color: white;
+  text-decoration: none;
+  margin-bottom: 8px;
+}
+
+footer p {
+  margin: 0;
+}
+
+.footer-links a:hover {
+  text-decoration: underline;
 }

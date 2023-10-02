@@ -60,6 +60,6 @@
     </section>
   </main>
 
-  <?php include "footer.php"; ?>
+  <?php include "footer(homepage).php"; ?>
 </body>
 </html>

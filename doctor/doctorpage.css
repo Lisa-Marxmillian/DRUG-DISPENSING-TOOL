@@ -25,7 +25,10 @@ header {
 }
 
 .doctor-info {
-  margin-right: 20px;}
+  margin-right: 20px;
+  font-size: 30px;
+  color:antiquewhite;
+}
 
 
   nav {
@@ -127,10 +130,13 @@ header {
 }
 
 
-
 footer {
   background-color: teal;
-  color: white;
+  color: #fff;
   padding: 20px;
   text-align: center;
+}
+
+footer p {
+  margin: 0;
 }

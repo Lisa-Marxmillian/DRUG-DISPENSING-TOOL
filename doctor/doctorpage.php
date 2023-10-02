@@ -20,11 +20,12 @@ $result = mysqli_query($conn, $sql);
   <header>
     <div class="top-bar">
       <div class="logo">
-        <img src="0.png" alt="Logo">
+        <img src="../graphics/0.png" alt="Logo">
       </div>
       <div class="doctor-info">
         Welcome, <?php echo $_SESSION['username']; ?>!
       </div>
+    </div>  
       <nav>
         <ul>
           <li><a href="doctorpage.php">Home</a></li>
@@ -33,7 +34,6 @@ $result = mysqli_query($conn, $sql);
           <li><a href="logout.php">Logout</a></li> 
         </ul>
       </nav>
-    </div>
   </header>
 
   <section class="appointments-section">
@@ -64,12 +64,11 @@ $result = mysqli_query($conn, $sql);
         }
         ?>
       </tbody>
-    </table>
-   
-
+      </table>
+    <br>
   </div>
   </section>
 
-  <?php include "footer.php" ?>
+<?php include "../PharmaCare Homepage/footer.php" ?> 
 </body>
 </html>

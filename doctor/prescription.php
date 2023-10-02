@@ -60,10 +60,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   <header>
     <div class="top-bar">
       <div class="logo">
-        <img src="logo.png" alt="Logo">
+        <img src="../graphics/0.png" alt="Logo">
       </div>
       <div class="doctor-info">
         Welcome, <?php echo $_SESSION['username']; ?>!
+      </div>
       </div>
       <nav>
         <ul>
@@ -73,7 +74,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
           <li><a href="logout.php">Logout</a></li> 
         </ul>
       </nav>
-    </div>
     </header>
 
 <section class="prescription-form-section">
@@ -116,7 +116,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <input type="text" name="frequency" id="frequency" required>
       </div>
       <div class="form-group">
-       
+    
        
 
       </div>
@@ -157,6 +157,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   
 }}}?>
 
-<?php include "footer.php" ?>
+<?php include "../PharmaCare Homepage/footer.php"; ?>  
 </body>
 </html>
