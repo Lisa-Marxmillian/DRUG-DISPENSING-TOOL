@@ -18,13 +18,12 @@ $result = mysqli_query($conn, $sql);
     <header>
     <div class="top-bar">
       <div class="logo">
-        <img src="0.png" alt="Logo">
+        <img src="../graphics/0.png" alt="Logo">
       </div>
-      <div class="pharamacist-info">
+      <div class="pharmacist-info">
         Welcome, <?php echo $_SESSION['username']; ?>!
       </div>
-      
-  
+</div>
     <nav>
         <ul>
             <li><a href="pharmacistpage.php">Patient Prescriptions</a></li>

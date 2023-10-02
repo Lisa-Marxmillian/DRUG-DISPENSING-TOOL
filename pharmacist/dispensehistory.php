@@ -1,7 +1,7 @@
 <?php
 session_start(); 
 
-require_once("dbconnect.php");
+require_once("../dbconnect.php");
 
 $sql = "SELECT * FROM dispense";
 $result = mysqli_query($conn, $sql);

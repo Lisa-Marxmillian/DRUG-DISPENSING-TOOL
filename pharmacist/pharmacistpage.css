@@ -18,8 +18,11 @@ header {
   margin-top: 0px;
 }
 
-.doctor-info {
-  margin-right: 20px;}
+.pharmacist-info {
+  margin-right: 20px;
+  font-size: 30px;
+  color:antiquewhite;
+}
 
 
   nav {
@@ -100,23 +103,7 @@ footer {
   padding: 20px;
   text-align: center;
 }
-
-.footer-links {
-  display: flex;
-  flex-direction: column;
- 
-}
-
-.footer-links a {
-  color: white;
-  text-decoration: none;
-  margin-bottom: 8px;
-}
-
+  
 footer p {
   margin: 0;
-}
-
-.footer-links a:hover {
-  text-decoration: underline;
 }

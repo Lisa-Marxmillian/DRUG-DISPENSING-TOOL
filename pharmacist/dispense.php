@@ -1,7 +1,7 @@
 <?php
 session_start(); 
 
-require_once("dbconnect.php");
+require_once("../dbconnect.php");
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   if (isset($_POST['search_btn'])) {
@@ -42,19 +42,18 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <head>
     <meta charset="UTF-8">
     <title>Pharmacist Page</title>
-    <link rel="stylesheet" type="text/css" href="pharmacistpage.css">
+    <link rel="stylesheet" type="text/css" href="dispense.css">
 </head>
 <body>
     <header>
     <div class="top-bar">
       <div class="logo">
-        <img src="0.png" alt="Logo">
+        <img src="../graphics/0.png" alt="Logo">
       </div>
-      <div class="pharamacist-info">
+      <div class="doctor-info">
         Welcome, <?php echo $_SESSION['username']; ?>!
       </div>
-      
-  
+    </div>
     <nav>
         <ul>
             <li><a href="pharmacistpage.php">Patient Prescriptions</a></li>
@@ -63,9 +62,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <li><a href="logout.php">Logout</a></li> 
         </ul>
     </nav>
-    </div>
   </header>
->
 
 <section class="search-prescription-section">
     <h2>Search Prescription</h2>
@@ -120,8 +117,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     } ?>
   </section>
 
-  <footer>
-
-  </footer>
+  <?php include "../PharmaCare Homepage/footer.php" ?>  
 </body>
 </html>

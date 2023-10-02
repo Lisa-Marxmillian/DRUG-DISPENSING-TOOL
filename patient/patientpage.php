@@ -15,7 +15,7 @@ session_start();
       <div class="logo">
         <img src="../graphics/0.png" alt="Logo" >
       </div>
-      <div class="patientinfo">
+      <div class="patient-info">
       Welcome, <?php echo $_SESSION['username']; ?>!
       </div>
     </div>
@@ -28,7 +28,7 @@ session_start();
         <li><a href="logout.php">Logout</a></li> 
         <li>
           <form class="search-form">
-            <input type="text" placeholder="Search...">
+            <input type="text" placeholder="Search..."> 
             <button type="submit">Search</button>
           </form>
         </li>
