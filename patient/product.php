@@ -25,7 +25,7 @@ session_start();
         <li><a href="prescriptionpatientview.php">My Prescriptions</a></li> 
         <li><a href="product.php">Medication</a></li> 
         <li><a href="../PharmaCare Homepage/contact.html">Contact Us</a></li>
-        <li><a href="logout.php">Logout</a></li> 
+        <li><a href="../logout.php">Logout</a></li> 
         <li>
           <form class="search-form" action="product.php" method="post"> 
             <input type="text" name="search_query" placeholder="Search..."> 

@@ -32,7 +32,7 @@ include ('adminheader.php');?>
           while ($row = mysqli_fetch_assoc($result)) {
             echo "<tr>";
             echo "<td>".$row['TradeName']."</td>";
-            echo "<td>".$row['Manufacturer']."</td>";
+            echo "<td>".$row['manufacturer']."</td>";
             echo "<td>".$row['price']."</td>";
             echo "<td>".$row['quantity']."</td>";
             echo "<td><a class='edit-btn' href='edit(drug).php?id=".$row['TradeName']."' target='_blank'>Edit</a></td>";

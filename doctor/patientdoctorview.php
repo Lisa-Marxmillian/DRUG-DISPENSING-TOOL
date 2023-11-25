@@ -25,24 +25,7 @@ $totalPages = ceil($totalResults / $resultsPerPage);
   <link rel="stylesheet" type="text/css" href="patientdoctorview.css">
 </head>
 <body>
-  <header>
-    <div class="top-bar">
-      <div class="logo">
-        <img src="../graphics/0.png" alt="Logo">
-      </div>
-      <div class="doctor-info">
-        Welcome, <?php echo $_SESSION['username']; ?>!
-      </div>
-    </div>
-      <nav>
-        <ul>
-        <li><a href="doctorpage.php">Home</a></li>
-          <li><a href="patientdoctorview.php">Patients</a></li>
-          <li><a href="prescription.php">Prescriptions</a></li>
-          <li><a href="logout.php">Logout</a></li> 
-        </ul>
-      </nav>
-  </header>
+<?php include "doctorheader.php";?>
   <body>
     <main>
     <h1>Patients</h1>
