@@ -43,5 +43,6 @@ include ('adminheader.php');?>
     </main>
      
     <?php include "../PharmaCare Homepage/footer.php" ?>  
+   
 </body>
 </html>

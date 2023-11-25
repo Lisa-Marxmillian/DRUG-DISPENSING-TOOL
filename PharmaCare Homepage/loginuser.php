@@ -50,15 +50,16 @@ if ($result->num_rows == 1) {
             header("Location: error.php");
             exit;
         }
-    } else {
+    }
+ else 
+ {
         $_SESSION['login_error_message'] = "User not found.";
         header("Location: error.php");
         exit;
-    }
+ }
 
     $stmt->close();
     $conn->close();
-
 ?>
 
 
