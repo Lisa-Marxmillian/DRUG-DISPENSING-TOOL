@@ -73,7 +73,7 @@ include ('adminheader.php');?>
       </tbody>
     </table>
 
-    <button class="add-drug-button" onclick="window.location.href='addDrugs.php'">Add Drugs</button>
+    <button class="add-drug-button" onclick="window.location.href='AddDrugs.php'">Add Drugs</button>
 
    
       </div>
