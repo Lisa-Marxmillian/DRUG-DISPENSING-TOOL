@@ -1,50 +1,118 @@
 <?php
+session_start(); 
 require_once("../dbconnect.php");
 
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $tradeName = $_POST['tradeName'];
-    $manufacturer = $_POST['manufacturer'];
-    $price = $_POST['price'];
-    $quantity = $_POST['quantity'];
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['add_btn'])) {
+  // Include the database connection file
+  
 
-    $sql = "INSERT INTO drugs (TradeName, Manufacturer, price,quantity) VALUES (?, ?, ?)";
-    $stmt = mysqli_prepare($conn, $sql);
+  $TradeName = $_POST['tradeName'];
+  $Manufacturer = $_POST['manufacturer'];
+  $Price = $_POST['price'];
+  $Quantity = $_POST['quantity'];
+  $Category = $_POST['category'];
+}
+ 
+  // Handle image upload
+  if (isset($_FILES['drugimage']) && $_FILES['drugimage']['error'] === UPLOAD_ERR_OK) {
+    // Check if the uploaded file is an image
+    $allowedExtensions = ['jpg', 'jpeg', 'png'];
+    $fileExtension = strtolower(pathinfo($_FILES['drugimage']['name'], PATHINFO_EXTENSION));
 
-    if ($stmt) {
-        mysqli_stmt_bind_param($stmt, "sss", $tradeName, $manufacturer, $price,$quantity);
-        if (mysqli_stmt_execute($stmt)) {
-            echo "Drug added successfully.";
-        } else {
-            echo "Error adding drug: " . mysqli_error($conn);
-        }
-        mysqli_stmt_close($stmt);
+    if (in_array($fileExtension, $allowedExtensions)) {
+      // Get the image filename
+      $imagepath = $_FILES['drugimage']['name'];
+
+      // Read the uploaded image file
+      $Drugimage = file_get_contents($_FILES['drugimage']['tmp_name']);
+      $Drugimage = mysqli_real_escape_string($conn, $Drugimage);
+      $Drugimage = mysqli_escape_string($conn, $Drugimage);
+      $Drugimage = base64_encode($Drugimage);
+
+      // Prepare a SQL query to insert drug data into the database
+   // Prepare a SQL query to insert drug data into the database
+$addSql = "INSERT INTO drug (TradeName, manufacturer, price, quantity, category, imagepath, drugimage) VALUES (?, ?, ?, ?, ?, ?, ?)";
+$addStmt = mysqli_prepare($conn, $addSql);
+
+if ($addStmt) {
+    // Bind the parameters
+    mysqli_stmt_bind_param($addStmt, "sssssss", $TradeName, $Manufacturer, $Price, $Quantity, $Category, $imagepath, $Drugimage);
+
+    // Execute the statement
+    if (mysqli_stmt_execute($addStmt)) {
+        echo "Drug added successfully.";
     } else {
-        echo "Error preparing statement: " . mysqli_error($conn);
+        echo "Error adding drug: " . mysqli_error($conn);
     }
 
-    mysqli_close($conn);
+    // Close the prepared statement
+    mysqli_stmt_close($addStmt);
+} else {
+    echo "Error preparing statement: " . mysqli_error($conn);
 }
+    } else {
+      echo "Only JPG, JPEG, or PNG files are allowed.";
+    }
+  } else {
+    echo "Error uploading image.";
+  }
+
+  // Close the database connection
+  mysqli_close($conn);
+
+
+include("adminheader.php");
 ?>
 
 
-<form method="POST" action="add_drug.php">
-    <div>
-        <label for="tradeName">Trade Name:</label>
-        <input type="text" name="tradeName" required>
+
+
+
+  <div class = "add-drug-form">
+    <h2>Add Drug</h2>
+
+    <form action="AddDrugs.php" method="POST" enctype="multipart/form-data">
+
+    <div class="form-group">
+      <label for="tradeName">Trade Name:</label>
+      <input type="text" name="tradeName" id="tradeName" required>
     </div>
-    <div>
-        <label for="manufacturer">Manufacturer:</label>
-        <input type="text" name="manufacturer" required>
+    <div class="form-group">
+      <label for="manufacturer">Manufacturer:</label>
+      <input type="text" name="manufacturer" id="manufacturer" required>
     </div>
-    <div>
-        <label for="price">Price:</label>
-        <input type="text" name="price" required>
+    <div class="form-group">
+      <label for="price">Price:</label>
+      <input type="text" name="price" id="price" required>
     </div>
-    <div>
-        <label for="quantity">Price:</label>
-        <input type="text" name="quantity" required>
+    <div class="form-group">
+      <label for="quantity">Quantity:</label>
+      <input type="text" name="quantity" id="quantity" required>
     </div>
-    <div>
-        <button type="submit">Add Drug</button>
+    <div class="form-group">
+  <label for="category">Category:</label>
+  <select name="category" id="category" required>
+    <option value="Pain Relief">Pain Relief</option>
+    <option value="Digestive Care">Digestive Care</option>
+    <option value="Eye Care">Eye Care</option>
+    <option value="Skin Care">Skin Care</option>
+    <option value="Antihistamine">Antihistamine</option>
+  </select>
+</div>
+
+    <div class="form-group">
+  <label for="drugimage">Drug Image:</label>
+  <input type="file" name="drugimage" id="drugimage" accept="image/*" required>
+</div>
+    <div class="form-group">
+      <button type="submit" name="add_btn">Add Drug</button>
     </div>
-</form>
+    <div class="form-group">
+      <button type="reset">Reset</button>
+    </div>
+  </form>
+  <footer>
+
+  <p>&copy; 2023 Drug Dispensing Website. All rights reserved.</p>
+  </footer>
+</html>

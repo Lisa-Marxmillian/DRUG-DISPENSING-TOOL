@@ -1,104 +1,116 @@
 <?php
-session_start(); 
+session_start();
+ include("patientheader.php");
 ?>
 
-<html>
-<head>
-  <meta charset="UTF-8">
-  <title>Products</title>
- 
-  <link rel="stylesheet" type="text/css" href="product.css"> 
-</head>
+
+
+<html lang="en">
 <body>
-  <header>
-    <div class="top-bar">
-      <div class="logo">
-        <img src="../graphics/0.png" alt="Logo" >
-      </div>
-      <div class="patientinfo">
-      Welcome, <?php echo $_SESSION['username']; ?>!
-      </div>
-    </div>
-    <nav>
-      <ul>
-      <li><a href="patientpage.php">Dashboard</a></li> 
-        <li><a href="prescriptionpatientview.php">My Prescriptions</a></li> 
-        <li><a href="product.php">Medication</a></li> 
-        <li><a href="contact.html">Contact Us</a></li>
-        <li><a href="logout.php">Logout</a></li> 
-        <li>
-          <form class="search-form" action="product.php" method="post"> 
-            <input type="text" name="search_query" placeholder="Search..."> 
-            <button type="submit">Search</button>
-          </form>
-        </li>
-      </ul>
-    </nav>
-  </header>
+   
 
   <main>
-    <h1>Medication</h1>
-    <div class="product-grid">
-      <?php
-      require_once("../dbconnect.php");
+     
+        <form class="search-form" action="product.php" method="post">
+            <input type="text" name="search_query" placeholder="Search for a specific drug...">
+            <button type="submit">Search</button>
+        </form>
+        <form action="" method="post">
+            <label for="sortOption">Sort by:</label>
+            <select name="sortOption" id="sortOption">
+                <option value="all">All</option>
+                <option value="price">Price</option>
+                <option value="category">Category</option>
+            </select>
+            <button type="submit" name="sort_btn">Sort</button>
+        </form>
+        <!-- Start of the product-grid container -->
+        <div class="product-grid sorted">
+            <?php
+            require_once("../dbconnect.php");
 
-      $search_query = "";
-      if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-        if (isset($_POST['search_query'])) {
-          $search_query = $_POST['search_query'];
-          $sql = "SELECT * FROM drug WHERE TradeName LIKE '%$search_query%' OR price LIKE '%$search_query%'";
-        }
-      } else {
-        $sql = "SELECT * FROM drug";
-      }
+            $search_query = "";
+            $sql = "";
 
-      $result = mysqli_query($conn, $sql);
+            if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+                if (isset($_POST['search_query'])) {
+                    $search_query = $_POST['search_query'];
+                    $sql = "SELECT * FROM drug WHERE TradeName LIKE '%$search_query%'";
+                }
+            } else {
+                $sql = "SELECT * FROM drug";
+            }
 
-      if ($result === false) {
-          die("Query execution failed: " . mysqli_error($conn));
-      }
-      
-      if (mysqli_num_rows($result) > 0) {
-          while ($row = mysqli_fetch_assoc($result)) {
-              echo '<div class="product-card">';
-              echo '<h2>' . $row['TradeName'] . '</h2>';
-              echo '<img src="' . $row['image_url'] . '" alt="' . $row['TradeName'] . '" />';
-              echo '<p>Price: KES ' . $row['price'] . '</p>';
-              echo '<button class="view-details-btn">View Details</button>';
-              echo '</div>';
-          }
-      } else {
-          echo '<p>No products found.</p>';
-      }
-      
-      mysqli_close($conn);
-      ?>
-      </div>
-      
-  </main>
+            // Execute the query only if $sql is not empty
+            if (!empty($sql)) {
+                $result = mysqli_query($conn, $sql);
 
-  <footer>
-    <div class="footer-column">
-      <div class="contact-info">
-        <h2>Contact Us</h2>
-        <p>123 Kilimani, Nairobi</p>
-        <p>Phone: (123) 456-7890</p>
-        <p>Email: info@pharmacare.com</p>
-      </div>
-      <div class="footer-links">
-        <a href="termsandconditions.html">Terms and Conditions</a>
-        <a href="Events.html">Events</a>
-        <a href="privacypolicy.html">Privacy Policy</a>
-      </div>
-    </div>
-    <div class="footer-column">
-      <div class="offers">
-        <h2>Special Offers</h2>
-        <p>Subscribe to our newsletter and get exclusive discounts.</p>
-        <a href="#" class="cta-button">Subscribe</a>
-      </div>
-      <p>&copy; 2023 Drug Dispensing Website. All rights reserved.</p>
-    </div>
-  </footer>
+                if ($result && mysqli_num_rows($result) > 0) {
+                    while ($drug = mysqli_fetch_assoc($result)) {
+                        // Display each drug's information within a product-card
+                        echo '<div class="product-card">';
+                        echo '<h2>' . $drug['TradeName'] . '</h2>';
+                        echo '<img src="../graphics/' . $drug['imagepath'] . '" alt="' . $drug['TradeName'] . '" />';
+                        echo '<p>Price: KES ' . $drug['price'] . '</p>';
+                        echo '<a class="view-details-btn" href="drugdetails.php?TradeName=' . $drug['TradeName'] . '">View Details</a>';
+
+                        echo '</div>';
+                    }
+                } else {
+                    echo 'No drugs found.';
+                }
+            }
+            ?>
+        </div> <!-- End of the product-grid container -->
+    </main>
 </body>
 </html>
+
+<?php
+include("../dbconnect.php");
+
+if (isset($_POST['sort_btn'])) {
+  $sortOption = $_POST['sortOption'];
+  $orderBy = '';
+
+  if ($sortOption === 'price') {
+    $orderBy = 'ORDER BY price';
+
+  } elseif ($sortOption === 'category') {
+    // Fetch drugs ordered by category
+    $orderBy = 'ORDER BY category, TradeName';
+  }
+
+  // Fetch drugs from the database with optional sorting
+  $sortSql = "SELECT * FROM drug $orderBy";
+  // Execute the query and retrieve drug data
+  $result = mysqli_query($conn, $sortSql);
+
+  if ($result) {
+    $currentCategory = null;
+
+    // Display the sorted or unsorted drugs in grids with category headers
+    while ($row = mysqli_fetch_assoc($result)) {
+      if ($sortOption === 'category' && $currentCategory !== $row['category']) {
+        // Display category header
+        echo '<h2 class="category-header">' . $row['category'] . '</h2>';
+  
+        $currentCategory = $row['category'];
+      }
+
+      // Display each drug's image using an <img> tag
+      echo '<div class="product-card sorted">';
+      echo '<h2>' . $row['TradeName'] . '</h2>';
+      echo '<img src="../graphics/' . $row['imagepath'] . '" alt="' . $row['TradeName'] . '" />';
+      echo '<p>Price: KES ' . $row['price'] . '</p>';
+      echo '<a href="drugdetails.php?TradeName=' . $row['TradeName'] . '">View Details</a>';
+      echo '</div>';
+    }
+  } else {
+    echo "Error executing query: " . mysqli_error($conn);
+  }
+
+}
+ include("patientfooter.php");
+ ?>
+

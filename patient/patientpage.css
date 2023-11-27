@@ -1,32 +1,38 @@
-body, h1, h2, p, ul, li {
-    margin: 0;
-    padding: 0;
-  }
-  
-  body {
-    font-family: Arial, sans-serif;
-    font-size: 16px;
-    line-height: 1.5;
-  }
-  
-  header {
-    background-color: teal;
-  
-    background-blend-mode: darken;
-    background-size:10%;
-    padding: 100px;
-    
-  }
-  
-  .top-bar {
-    display:flex ;
-    justify-content: space-between;
-    align-items:center;
-  }
 
-.patientinfo {
-  margin-right: 20px;
+body, h1, h2, p, ul, li {
+  margin: 5;
+  padding: 5;
 }
+
+body {
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+header {
+  background-color: teal;
+
+  background-blend-mode: darken;
+  background-size:10%;
+  padding: 100px;
+  
+}
+
+ 
+  
+.top-bar {
+  display:flex ;
+  justify-content: space-between;
+  align-items:center;
+  }
+  
+  .patientinfo {
+  margin-right: 20px;
+  color: antiquewhite;
+  font-weight: bolder;
+  }
+  
 
 nav {
   background-color: rgba(255, 255, 255, 0.959);
@@ -71,8 +77,16 @@ nav ul li a.active {
   padding: 50px;
 }
 
+body {
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+ 
+}
+
 .hero-content {
   width: 50%;
+  background-color: teal;
 }
 
 .hero h1 {
@@ -86,7 +100,20 @@ nav ul li a.active {
   margin-bottom: 30px;
   color: white;
 }
+header {
+  background-color: teal;
+  padding: 50px 0;
+  text-align: center; /* Center align header content */
+}
 
+.top-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 1200px; /* Limit the width of the header content */
+  margin: 0 auto; /* Center align header content horizontally */
+}
 .cta-button {
   display: inline-block;
   padding: 10px 20px;
@@ -105,29 +132,275 @@ nav ul li a.active {
 
 
 main {
-    padding: 20px;
-  }
   
-  .profile-section {
-    margin-bottom: 30px;
-  }
-  
-  .profile-section h2 {
-    font-size: 24px;
-    margin-bottom: 10px;
-    border-bottom: 2px solid teal;
-    padding-bottom: 5px;
-  }
-  
-  .profile-section p {
-    font-size: 16px;
-    margin-bottom: 10px;
-  }
-  .prescription-list {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
-  }
+  align-items: center;
+  text-align: center;
+}
+
+/* Style the h1 */
+.h1 {
+  font-size: 36px;
+  margin-bottom: 20px;
+  color: teal;
+}
+
+/* Style the search bar container */
+.search-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+/* Style the search bar input */
+.search-form input[type="text"] {
+  width: 100%;
+  max-width: 400px;
+  padding: 10px;
+  border: 2px solid teal;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+/* Style the search button */
+.search-form button[type="submit"] {
+  background-color: teal;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s;
+}
+
+/* Hover effect for the search button */
+.search-form button[type="submit"]:hover {
+  background-color: #00796b;
+}
+
+.profile-section {
+  margin-bottom: 30px;
+  text-align: center; /* Center align the content within .profile-section */
+}
+
+.profile-section h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+  border-bottom: 2px solid teal;
+  padding-bottom: 5px;
+}
+
+.profile-section p {
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.prescription-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 40px;
+  text-align: center; /* Center align grid content */
+}
+
+.product-card {
+  background-color: #f2f2f2;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center; /* Center align card content */
+}
+
+.product-card img {
+  max-width: 100%;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+.product-card h2 {
+  color: teal;
+  margin-bottom: 10px;
+}
+
+.product-card p {
+  font-size: 18px;
+}
+
+/* View details button styles */
+.view-details-btn {
+  background-color: teal;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  margin-top: 10px;
+  display: inline-block; /* Display the button inline */
+  text-align: center; /* Center align button text */
+  text-decoration: none; /* Remove default link underline */
+  transition: background-color 0.3s;
+}
+
+.view-details-btn:hover {
+  background-color: #00796b;
+}
+
+/* Center align category names when sorted */
+.product-grid.sorted {
+  justify-items: center;
+}
+/* Style the sort form container */
+main form[action=""] {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Style the label for sort options */
+main form[action=""] label {
+  font-size: 18px;
+  margin-bottom: 10px;
+  color: teal;
+}
+
+/* Style the sort select */
+main form[action=""] select[name="sortOption"] {
+  width: 100%;
+  max-width: 200px;
+  padding: 10px;
+  border: 2px solid teal;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+/* Style the sort button */
+main form[action=""] button[type="submit"] {
+  background-color: teal;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s;
+}
+
+/* Hover effect for the sort button */
+main form[action=""] button[type="submit"]:hover {
+  background-color: #00796b;
+}
+  /* Center-align the category headers */
+.category-header {
+  text-align: center;
+  margin: 20px 0; /* Add margin for spacing */
+  color: teal; /* Apply teal color to category headers */
+  font-size: 24px; /* Set the font size */
+  border-bottom: 2px solid teal; /* Add a bottom border */
+  padding-bottom: 5px; /* Add space below the border */
+}
+/* Style the product grid to display drugs in a grid format */
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px; /* Adjust the gap between product cards */
+  text-align: center; /* Center-align the content within each card */
+}
+
+/* Style the product cards */
+.product-card {
+  background-color: #f2f2f2;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.product-card img {
+  max-width: 100%;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+.product-card h2 {
+  color: teal;
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.product-card p {
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.view-details-btn {
+  background-color: teal;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 16px;
+  margin-top: 10px;
+}
+
+.view-details-btn:hover {
+  background-color: #00796b;
+}
+.section.page {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Centers content vertically */
+  background-color: #f0f0f0; /* Optional background color */
+}
+
+.wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.media-details {
+  margin-bottom: 20px;
+}
+
+.media-details img {
+  max-width: 100%;
+  height: auto;
+}
+
+.h1 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.table, th, td {
+  border: 1px solid #00796b;
+
+}
+
+.th, td {
+  padding: 10px;
+  text-align: center;
+}
+
+.th {
+  background-color: #f2f2f2;
+}
+
+
   footer {
     background-color: teal;
     color: white;
