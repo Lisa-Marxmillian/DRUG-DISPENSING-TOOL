@@ -24,8 +24,10 @@ body, h1, h2, p, ul, li {
     align-items:center;
   }
 
-.patientinfo {
+.patient-info {
   margin-right: 20px;
+  font-size: 30px;
+  color:antiquewhite;
 }
 
 nav {
@@ -87,22 +89,10 @@ nav ul li a.active {
   color: white;
 }
 
-.cta-button {
-  display: inline-block;
-  padding: 10px 20px;
-  background-color: white;
-  color: teal;
-  text-decoration: none;
-  border-radius: 5px;
-  font-weight: bold;
-}
-
 .hero-image img {
   max-width: 100%;
   text-align: right;
 }
-
-
 
 main {
     padding: 20px;
@@ -128,24 +118,15 @@ main {
     grid-template-columns: repeat(2, 1fr);
     gap: 20px;
   }
+ 
   footer {
     background-color: teal;
-    color: white;
+    color: #fff;
     padding: 20px;
     text-align: center;
   }
-  .footer-links {
-    display: flex;
-    flex-direction: column;
-   
+    
+  footer p {
+    margin: 0;
   }
-  
-  .footer-links a {
-    color: white;
-    text-decoration: none;
-    margin-bottom: 8px;
-  }
-  
-  .footer-links a:hover {
-    text-decoration: underline;
-  }
+

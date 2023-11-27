@@ -41,6 +41,16 @@ header {
   font-weight: bold;
 }
 
+.cta-button {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: white;
+  color: teal;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
 nav {
   background-color: rgba(255, 255, 255, 0.959);
   padding: 13px;
@@ -103,15 +113,31 @@ nav ul li a:hover:not(.active) {
     padding: 20px;
     margin-bottom: 20px;
   }
-  
+    
+
   footer {
-    background-color: #0f7a86;
+    background-color: teal;
     color: #fff;
-    padding: 10px;
+    padding: 20px;
     text-align: center;
+  }
+  
+  .footer-links {
+    display: flex;
+    flex-direction: column;
+   
+  }
+  
+  .footer-links a {
+    color: white;
+    text-decoration: none;
+    margin-bottom: 8px;
   }
   
   footer p {
     margin: 0;
   }
-  
+
+  .footer-links a:hover {
+    text-decoration: underline;
+  }

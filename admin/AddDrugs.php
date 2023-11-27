@@ -1,5 +1,5 @@
 <?php
-require_once("dbconnect.php");
+require_once("../dbconnect.php");
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $tradeName = $_POST['tradeName'];

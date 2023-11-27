@@ -38,7 +38,7 @@ $conn->close();
       <h1><?php echo $errorMessage; ?></h1>
     <?php } ?>
     <div class="buttonsafter">
-      <a href="drug dispenser.html" class="button">Back to Home</a>
+      <a href="drug dispenser.php" class="button">Back to Home</a>
       <a href="login.html" class="button">Login</a>
     </div>
   </div>

@@ -10,57 +10,13 @@ session_start();
   <link rel="stylesheet" type="text/css" href="patientpage.css"> 
 </head>
 <body>
-  <header>
-    <div class="top-bar">
-      <div class="logo">
-        <img src="0.png" alt="Logo" >
-      </div>
-      <div class="patientinfo">
-      Welcome, <?php echo $_SESSION['username']; ?>!
-      </div>
-    </div>
-    <nav>
-      <ul>
-        <li><a href="patientpage.php">Dashboard</a></li> 
-        <li><a href="prescriptionpatientview.php">My Prescriptions</a></li> 
-        <li><a href="product.php">Medication</a></li> 
-        <li><a href="contact.html">Contact Us</a></li>
-        <li><a href="logout.php">Logout</a></li> 
-        <li>
-          <form class="search-form">
-            <input type="text" placeholder="Search...">
-            <button type="submit">Search</button>
-          </form>
-        </li>
-      </ul>
-    </nav>
-    <div class="hero">
-      <div class="hero-content">
-        <h1>Welcome!</h1> 
-        <h2>Healthcare Made Easy</h2>
-        <p>
-          With just a few clicks, you can conveniently order your prescribed medications
-          from the comfort of your home, saving you time and effort. Safely store and
-          manage your prescriptions online. Our automatic refill reminders ensure you never
-          run out of your essential medications. Rest assured that your sensitive medical
-          information is securely protected. Gain access to a wide range of medications,
-          including rare and specialized drugs, all at competitive prices. Compare prices,
-          read reviews, and make informed choices for your well-being. Experience the
-          accessibility, convenience, and cost savings of our user-friendly services.
-        </p>
-      </div>
-      <div class="hero-image">
-        <img src="2.png" alt="Header Image" style="width: 500px; height: auto;">
-      </div>
-    </div>
-  </header>
-
+<?php include "patientheader.php";?>
   <main>
   <section class="profile-section">
       <h2>Profile Information</h2>
       <?php
       
-      require_once("dbconnect.php");
+      require_once("../dbconnect.php");
 
       $username = $_SESSION['username']; 
 

@@ -1,38 +1,14 @@
 <?php
 session_start(); 
 ?>
-<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="UTF-8">
-  <title>Administrator Page</title>
-  <link rel="stylesheet" type="text/css" href="adminpage.css">
-</head>
-<body>
-  <header>
-    <div class="top-bar">
-      <div class="logo">
-        <img src="0.png" alt="Logo">
-      </div>
-      <div class="admin-info">
-        <h2>Welcome back, <?php echo $_SESSION['username']; ?>!</h2>
-    </div>
-    </div>
-    <nav>
-      <ul>
-        <li><a href="adminpage.php">Home</a></li>
-        <li><a href="drugmodify.php">Products</a></li>
-        <li><a href="allusers.php">Users</a></li>
-        <li><a href="logout.php">Logout</a></li> 
-        
-      </ul>
-    </nav>
-  </header>
+<?php 
+$pageTitle = "Administrator Page";
+include ('adminheader.php');?>
   <main>
   <section class="profile-section">
       <h2>Profile Information</h2>
       <?php
-      require_once("dbconnect.php");
+      require_once("../dbconnect.php");
 
       $username = $_SESSION['username']; 
 
@@ -66,9 +42,7 @@ session_start();
     </section>
     </main>
      
-  <footer>
-
-  <p>&copy; 2023 PharmaCare Website. All rights reserved.</p>
-    </footer>
+    <?php include "../PharmaCare Homepage/footer.php" ?>  
+   
 </body>
 </html>

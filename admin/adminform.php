@@ -1,5 +1,5 @@
 <?php
-require_once("dbconnect.php");
+require_once("../dbconnect.php");
 
 $fname=$_POST['fname'];
 $lname= $_POST['lname'];

@@ -1,31 +1,8 @@
 <?php
 session_start(); 
-?>
-<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="UTF-8">
-  <title>Admin Page</title>
-  <link rel="stylesheet" type="text/css" href="drugmodify.css">
-</head>
-<body>
-  <header>
-    <div class="top-bar">
-      <div class="logo">
-        <img src="0.png" alt="Logo">
-      </div>
-      <div class="admin-info">
-        <h2>Welcome back, <?php echo $_SESSION['username']; ?>!</h2>
-      </div>
-    </div>
-    <nav>
-      <ul>
-        <li><a href="adminpage.php">Home</a></li>
-        <li><a href="drugmodify.php">Products</a></li>
-        <li><a href="allusers.php">Users</a></li>
-        <li><a href="logout.php">Logout</a></li>
-      </ul>
-    </nav>
+
+$pageTitle = "";
+include ('adminheader.php');?>
   </header>
   <body>
     <h1>DRUG DATA</h1>
@@ -42,7 +19,7 @@ session_start();
       </thead>
       <tbody>
         <?php
-        require_once("dbconnect.php");
+        require_once("../dbconnect.php");
 
         $sql = "SELECT * FROM drug";
         $result = mysqli_query($conn, $sql);
@@ -55,7 +32,7 @@ session_start();
           while ($row = mysqli_fetch_assoc($result)) {
             echo "<tr>";
             echo "<td>".$row['TradeName']."</td>";
-            echo "<td>".$row['Manufacturer']."</td>";
+            echo "<td>".$row['manufacturer']."</td>";
             echo "<td>".$row['price']."</td>";
             echo "<td>".$row['quantity']."</td>";
             echo "<td><a class='edit-btn' href='edit(drug).php?id=".$row['TradeName']."' target='_blank'>Edit</a></td>";
@@ -126,8 +103,7 @@ session_start();
     </form>
       </div>
   </body>
-  <footer>
-
-  <p>&copy; 2023 Drug Dispensing Website. All rights reserved.</p>
-  </footer>
+  
+  <?php include "../PharmaCare Homepage/footer.php" ?> 
+  
 </html>
