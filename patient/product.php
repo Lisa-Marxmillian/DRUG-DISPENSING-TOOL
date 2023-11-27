@@ -24,7 +24,6 @@ session_start();
             </select>
             <button type="submit" name="sort_btn">Sort</button>
         </form>
-        <!-- Start of the product-grid container -->
         <div class="product-grid sorted">
             <?php
             require_once("../dbconnect.php");
@@ -41,13 +40,11 @@ session_start();
                 $sql = "SELECT * FROM drug";
             }
 
-            // Execute the query only if $sql is not empty
             if (!empty($sql)) {
                 $result = mysqli_query($conn, $sql);
 
                 if ($result && mysqli_num_rows($result) > 0) {
                     while ($drug = mysqli_fetch_assoc($result)) {
-                        // Display each drug's information within a product-card
                         echo '<div class="product-card">';
                         echo '<h2>' . $drug['TradeName'] . '</h2>';
                         echo '<img src="../graphics/' . $drug['imagepath'] . '" alt="' . $drug['TradeName'] . '" />';
@@ -61,7 +58,7 @@ session_start();
                 }
             }
             ?>
-        </div> <!-- End of the product-grid container -->
+        </div>
     </main>
 </body>
 </html>
@@ -77,28 +74,22 @@ if (isset($_POST['sort_btn'])) {
     $orderBy = 'ORDER BY price';
 
   } elseif ($sortOption === 'category') {
-    // Fetch drugs ordered by category
     $orderBy = 'ORDER BY category, TradeName';
   }
 
-  // Fetch drugs from the database with optional sorting
   $sortSql = "SELECT * FROM drug $orderBy";
-  // Execute the query and retrieve drug data
   $result = mysqli_query($conn, $sortSql);
 
   if ($result) {
     $currentCategory = null;
 
-    // Display the sorted or unsorted drugs in grids with category headers
     while ($row = mysqli_fetch_assoc($result)) {
       if ($sortOption === 'category' && $currentCategory !== $row['category']) {
-        // Display category header
         echo '<h2 class="category-header">' . $row['category'] . '</h2>';
   
         $currentCategory = $row['category'];
       }
 
-      // Display each drug's image using an <img> tag
       echo '<div class="product-card sorted">';
       echo '<h2>' . $row['TradeName'] . '</h2>';
       echo '<img src="../graphics/' . $row['imagepath'] . '" alt="' . $row['TradeName'] . '" />';

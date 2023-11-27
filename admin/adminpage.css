@@ -301,7 +301,6 @@ text-align: left;
 .users-table-section th {
 background-color: #f2f2f2;
 }
-/* Style for the "Add Drug" button */
 .add-drug-button {
   display: inline-block;
   padding: 10px 20px;
@@ -317,8 +316,7 @@ background-color: #f2f2f2;
 }
 
 .add-drug-button:hover {
-  background-color: #00796b; /* Change color on hover */
-}
+  background-color: #00796b; }
 
 footer {
 background-color: teal;

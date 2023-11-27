@@ -42,9 +42,6 @@ include ('adminheader.php');?>
     </section>
     </main>
      
-  <footer>
-
-  <p>&copy; 2023 PharmaCare Website. All rights reserved.</p>
-    </footer>
+ <?php include("adminfooter.php")?>
 </body>
 </html>

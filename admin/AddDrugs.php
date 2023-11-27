@@ -111,8 +111,5 @@ include("adminheader.php");
       <button type="reset">Reset</button>
     </div>
   </form>
-  <footer>
-
-  <p>&copy; 2023 Drug Dispensing Website. All rights reserved.</p>
-  </footer>
+  <?php include("adminfooter.php")?>
 </html>

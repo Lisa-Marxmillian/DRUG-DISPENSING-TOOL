@@ -78,8 +78,5 @@ include ('adminheader.php');?>
    
       </div>
   </body>
-  <footer>
-
-  <p>&copy; 2023 Drug Dispensing Website. All rights reserved.</p>
-  </footer>
+  <?php include("adminfooter.php")?>
 </html>

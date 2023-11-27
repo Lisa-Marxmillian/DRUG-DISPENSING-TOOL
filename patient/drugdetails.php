@@ -1,10 +1,9 @@
 <?php
 session_start();
 
-// Include the database connection file
 include("../dbconnect.php");
 
-$TradeName = $_GET["TradeName"]; // Assuming you're passing this in the URL
+$TradeName = $_GET["TradeName"]; 
 
 $sql = "SELECT * FROM drug WHERE TradeName = ?";
 $stmt = mysqli_prepare($conn, $sql);
@@ -18,16 +17,15 @@ if ($stmt) {
     if ($drug) {
         $pageTitle = $drug['TradeName'];
     } else {
-        // Display an error message if the drug TradeName is not found.
+       
         echo "<h1>Drug Not Found</h1>";
         echo "<p>The drug with the TradeName '$TradeName' could not be found.</p>";
     }
 
-    // Close the prepared statement and result set
     mysqli_stmt_close($stmt);
     mysqli_free_result($result);
 } else {
-    // Display an error message if the query preparation failed.
+    
     echo "<h1>Query Preparation Failed</h1>";
     echo "<p>The query preparation failed with the following error: " . mysqli_error($conn) . "</p>";
 }

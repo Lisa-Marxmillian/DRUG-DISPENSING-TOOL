@@ -103,16 +103,15 @@ body {
 header {
   background-color: teal;
   padding: 50px 0;
-  text-align: center; /* Center align header content */
-}
+    text-align: center; }
 
 .top-bar {
   display: flex;
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  max-width: 1200px; /* Limit the width of the header content */
-  margin: 0 auto; /* Center align header content horizontally */
+  max-width: 1200px; 
+  margin: 0 auto; 
 }
 .cta-button {
   display: inline-block;
@@ -137,14 +136,12 @@ main {
   text-align: center;
 }
 
-/* Style the h1 */
 .h1 {
   font-size: 36px;
   margin-bottom: 20px;
   color: teal;
 }
 
-/* Style the search bar container */
 .search-form {
   display: flex;
   flex-direction: column;
@@ -152,7 +149,6 @@ main {
   margin-bottom: 20px;
 }
 
-/* Style the search bar input */
 .search-form input[type="text"] {
   width: 100%;
   max-width: 400px;
@@ -162,7 +158,6 @@ main {
   font-size: 16px;
 }
 
-/* Style the search button */
 .search-form button[type="submit"] {
   background-color: teal;
   color: white;
@@ -174,14 +169,13 @@ main {
   transition: background-color 0.3s;
 }
 
-/* Hover effect for the search button */
 .search-form button[type="submit"]:hover {
   background-color: #00796b;
 }
 
 .profile-section {
   margin-bottom: 30px;
-  text-align: center; /* Center align the content within .profile-section */
+  text-align: center; 
 }
 
 .profile-section h2 {
@@ -205,7 +199,7 @@ main {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 40px;
-  text-align: center; /* Center align grid content */
+  text-align: center; 
 }
 
 .product-card {
@@ -213,8 +207,7 @@ main {
   padding: 20px;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  text-align: center; /* Center align card content */
-}
+    text-align: center;}
 
 .product-card img {
   max-width: 100%;
@@ -231,7 +224,6 @@ main {
   font-size: 18px;
 }
 
-/* View details button styles */
 .view-details-btn {
   background-color: teal;
   color: white;
@@ -241,9 +233,9 @@ main {
   cursor: pointer;
   font-size: 16px;
   margin-top: 10px;
-  display: inline-block; /* Display the button inline */
-  text-align: center; /* Center align button text */
-  text-decoration: none; /* Remove default link underline */
+  display: inline-block; 
+  text-align: center; 
+  text-decoration: none;
   transition: background-color 0.3s;
 }
 
@@ -251,25 +243,21 @@ main {
   background-color: #00796b;
 }
 
-/* Center align category names when sorted */
 .product-grid.sorted {
   justify-items: center;
 }
-/* Style the sort form container */
 main form[action=""] {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-/* Style the label for sort options */
 main form[action=""] label {
   font-size: 18px;
   margin-bottom: 10px;
   color: teal;
 }
 
-/* Style the sort select */
 main form[action=""] select[name="sortOption"] {
   width: 100%;
   max-width: 200px;
@@ -279,7 +267,6 @@ main form[action=""] select[name="sortOption"] {
   font-size: 16px;
 }
 
-/* Style the sort button */
 main form[action=""] button[type="submit"] {
   background-color: teal;
   color: white;
@@ -291,25 +278,22 @@ main form[action=""] button[type="submit"] {
   transition: background-color 0.3s;
 }
 
-/* Hover effect for the sort button */
 main form[action=""] button[type="submit"]:hover {
   background-color: #00796b;
 }
-  /* Center-align the category headers */
 .category-header {
   text-align: center;
-  margin: 20px 0; /* Add margin for spacing */
-  color: teal; /* Apply teal color to category headers */
-  font-size: 24px; /* Set the font size */
-  border-bottom: 2px solid teal; /* Add a bottom border */
-  padding-bottom: 5px; /* Add space below the border */
+  margin: 20px 0; 
+  color: teal; 
+  font-size: 24px; 
+  border-bottom: 2px solid teal;
+  padding-bottom: 5px; 
 }
-/* Style the product grid to display drugs in a grid format */
 .product-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 20px; /* Adjust the gap between product cards */
-  text-align: center; /* Center-align the content within each card */
+  gap: 20px; 
+  text-align: center; 
 }
 
 /* Style the product cards */
@@ -356,8 +340,8 @@ main form[action=""] button[type="submit"]:hover {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh; /* Centers content vertically */
-  background-color: #f0f0f0; /* Optional background color */
+  height: 100vh; 
+  background-color: #f0f0f0; 
 }
 
 .wrapper {
