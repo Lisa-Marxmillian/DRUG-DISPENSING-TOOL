@@ -1,5 +1,5 @@
 <?php
-require_once("dbconnect.php");
+require_once("../dbconnect.php");
 
 if (isset($_POST['appointment_id']) && isset($_POST['status'])) {
   $appointmentId = $_POST['appointment_id'];

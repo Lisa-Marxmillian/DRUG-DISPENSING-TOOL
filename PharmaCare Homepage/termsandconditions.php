@@ -7,14 +7,14 @@
   <link rel="stylesheet" href="termsandconditions.css">
 </head>
 <body>
-  <header>
-    <h1>Terms and Conditions</h1>
-  </header>
+
+  <?php include "header.php"; ?>
   
   <main>
+    <h1>Terms and Conditions</h1>
     <section>
       <h2>Introduction</h2>
-      <p>Welcome to <a href="drug dispenser.html">www.PharmaCare.com</a>. These terms and conditions govern your use of the tool. By accessing and using the tool, you agree to abide by these terms and conditions. If you do not agree with any part of these terms, please refrain from using the tool.</p>
+      <p>Welcome to <a href="drug dispenser.php">www.PharmaCare.com</a>. These terms and conditions govern your use of the tool. By accessing and using the tool, you agree to abide by these terms and conditions. If you do not agree with any part of these terms, please refrain from using the tool.</p>
     </section>
     
     <section>
@@ -24,7 +24,7 @@
     
     <section>
       <h2>Privacy Policy</h2>
-      <p>We are committed to protecting your privacy. Our privacy policy outlines how we collect, use, and protect your personal information when you use PharmaCare. Please review our <a href="privacypolicy.html" target="_blank">Privacy Policy</a> for more information.</p>
+      <p>We are committed to protecting your privacy. Our privacy policy outlines how we collect, use, and protect your personal information when you use PharmaCare. Please review our <a href="privacypolicy.php" target="_blank">Privacy Policy</a> for more information.</p>
     </section>
     
     <section>
@@ -60,8 +60,6 @@
     </section>
   </main>
 
-  <footer>
-    <p>&copy; 2023 Drug Dispensing Website. All rights reserved.</p>
-  </footer>
+  <?php include "footer(homepage).php"; ?>
 </body>
 </html>

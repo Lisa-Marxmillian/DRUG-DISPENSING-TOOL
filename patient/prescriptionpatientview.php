@@ -5,7 +5,7 @@ session_start();
 
 
 <body>
-
+  <?php include "patientheader.php";?>
 
   <main>
     <h1>My Prescriptions        </h1>

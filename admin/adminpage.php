@@ -42,6 +42,7 @@ include ('adminheader.php');?>
     </section>
     </main>
      
- <?php include("adminfooter.php")?>
+    <?php include "../PharmaCare Homepage/footer.php" ?>  
+   
 </body>
 </html>

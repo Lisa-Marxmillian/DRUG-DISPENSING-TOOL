@@ -1,6 +1,6 @@
 <?php
 session_start(); 
-require_once("dbconnect.php");
+require_once("../dbconnect.php");
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   $patientname = $_POST['patientname'];
@@ -57,24 +57,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   <link rel="stylesheet" type="text/css" href="prescription.css">
 </head>
 <body>
-  <header>
-    <div class="top-bar">
-      <div class="logo">
-        <img src="logo.png" alt="Logo">
-      </div>
-      <div class="doctor-info">
-        Welcome, <?php echo $_SESSION['username']; ?>!
-      </div>
-      <nav>
-        <ul>
-        <li><a href="doctorpage.php">Home</a></li>
-          <li><a href="patientdoctorview.php">Patients</a></li>
-          <li><a href="prescription.php">Prescriptions</a></li>
-          <li><a href="logout.php">Logout</a></li> 
-        </ul>
-      </nav>
-    </div>
-    </header>
+<?php include "doctorheader.php";?>
 
 <section class="prescription-form-section">
   <h2>Prescription Form</h2>
@@ -116,7 +99,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <input type="text" name="frequency" id="frequency" required>
       </div>
       <div class="form-group">
-       
+    
        
 
       </div>
@@ -157,7 +140,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   
 }}}?>
 
-  <footer>
-  </footer>
+<?php include "../PharmaCare Homepage/footer.php"; ?>  
 </body>
 </html>

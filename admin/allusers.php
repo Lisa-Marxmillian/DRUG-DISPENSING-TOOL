@@ -121,6 +121,6 @@ include ('adminheader.php');?>
         <?php } ?>
     </section>
                     </body>
-                    <?php include("adminfooter.php")?>
+   <?php include "../PharmaCare Homepage/footer.php" ?> 
 </body>
 </html>

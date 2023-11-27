@@ -78,5 +78,7 @@ include ('adminheader.php');?>
    
       </div>
   </body>
-  <?php include("adminfooter.php")?>
+  
+  <?php include "../PharmaCare Homepage/footer.php" ?> 
+  
 </html>

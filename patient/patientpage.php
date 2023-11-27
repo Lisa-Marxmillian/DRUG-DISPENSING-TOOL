@@ -1,30 +1,16 @@
 <?php
-session_start();
- include("patientheader.php");
+session_start(); 
 ?>
-<header>
 
-    <div class="hero">
-      <div class="hero-content">
-        <h1>Welcome!</h1> 
-        <h2>Healthcare Made Easy</h2>
-        <p>
-          With just a few clicks, you can conveniently order your prescribed medications
-          from the comfort of your home, saving you time and effort. Safely store and
-          manage your prescriptions online. Our automatic refill reminders ensure you never
-          run out of your essential medications. Rest assured that your sensitive medical
-          information is securely protected. Gain access to a wide range of medications,
-          including rare and specialized drugs, all at competitive prices. Compare prices,
-          read reviews, and make informed choices for your well-being. Experience the
-          accessibility, convenience, and cost savings of our user-friendly services.
-        </p>
-      </div>
-      <div class="hero-image">
-        <img src="../graphics/2.png" alt="Header Image" style="width: 500px; height: auto;">
-      </div>
-    </div>
-</header>
-
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Patient Dashboard </title>
+ 
+  <link rel="stylesheet" type="text/css" href="patientpage.css"> 
+</head>
+<body>
+<?php include "patientheader.php";?>
   <main>
   <section class="profile-section">
       <h2>Profile Information</h2>

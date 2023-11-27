@@ -1,6 +1,6 @@
 <?php
 session_start(); 
-require_once("dbconnect.php");
+require_once("../dbconnect.php");
 $username = $_SESSION['username']; 
 $resultsPerPage =3; 
 $currentpage = isset($_GET['page']) ? $_GET['page'] : 1; 
@@ -25,24 +25,7 @@ $totalPages = ceil($totalResults / $resultsPerPage);
   <link rel="stylesheet" type="text/css" href="patientdoctorview.css">
 </head>
 <body>
-  <header>
-    <div class="top-bar">
-      <div class="logo">
-        <img src="logo.png" alt="Logo">
-      </div>
-      <div class="doctor-info">
-        Welcome, <?php echo $_SESSION['username']; ?>!
-      </div>
-      <nav>
-        <ul>
-        <li><a href="doctorpage.php">Home</a></li>
-          <li><a href="patientdoctorview.php">Patients</a></li>
-          <li><a href="prescription.php">Prescriptions</a></li>
-          <li><a href="logout.php">Logout</a></li> 
-        </ul>
-      </nav>
-    </div>
-  </header>
+<?php include "doctorheader.php";?>
   <body>
     <main>
     <h1>Patients</h1>
@@ -89,5 +72,7 @@ $totalPages = ceil($totalResults / $resultsPerPage);
       ?>
     </div>
     </main>
+    
+    <?php include "../PharmaCare Homepage/footer.php" ?> 
 </body>
 </html>
