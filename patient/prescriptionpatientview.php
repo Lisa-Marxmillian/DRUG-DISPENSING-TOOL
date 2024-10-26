@@ -1,18 +1,14 @@
 <?php
 session_start(); 
-?>
-<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="UTF-8">
-  <title>My Prescriptions</title>
-  <link rel="stylesheet" type="text/css" href="patientpage.css">
-</head>
+ include("patientheader.php");
+ ?>
+
+
 <body>
   <?php include "patientheader.php";?>
 
   <main>
-    <h1>My Prescriptions</h1>
+    <h1>My Prescriptions        </h1>
     <div class="prescription-list">
       <?php
       
@@ -53,6 +49,4 @@ session_start();
     </div>
   </main>
 
-  <?php include "../PharmaCare Homepage/footer.php" ?>  
-</body>
-</html>
+  <?php include("patientfooter.php");?>

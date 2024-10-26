@@ -73,34 +73,9 @@ include ('adminheader.php');?>
       </tbody>
     </table>
 
-     <div class = "add-drug-form">
-    <h2>Add Drug</h2>
+    <button class="add-drug-button" onclick="window.location.href='addDrugs.php'">Add Drugs</button>
 
    
-    <form method="POST" action="">
-      <div class="form-group">
-        <label for="tradeName">Trade Name:</label>
-        <input type="text" name="tradeName" id="tradeName" required>
-      </div>
-      <div class="form-group">
-        <label for="manufacturer">Manufacturer:</label>
-        <input type="text" name="manufacturer" id="manufacturer" required>
-      </div>
-      <div class="form-group">
-        <label for="price">Price:</label>
-        <input type="text" name="price" id="price" required>
-      </div>
-      <div class="form-group">
-        <label for="quantity">Quantity:</label>
-        <input type="text" name="quantity" id="quantity" required>
-      </div>
-      <div class="form-group">
-        <button type="submit" name="add_btn">Add Drug</button>
-      </div>
-      <div class="form-group">
-        <button type="reset" >Reset</button>
-      </div>
-    </form>
       </div>
   </body>
   

@@ -1,9 +1,9 @@
 <html>
 <head>
   <meta charset="UTF-8">
-  <title>Products</title>
+  <title>Patient Page</title>
  
-  <link rel="stylesheet" type="text/css" href="product.css"> 
+  <link rel="stylesheet" type="text/css" href="patientpage.css"> 
 </head>
 <body>
 <header>
@@ -20,8 +20,9 @@
         <li><a href="patientpage.php">Dashboard</a></li> 
         <li><a href="prescriptionpatientview.php">My Prescriptions</a></li> 
         <li><a href="product.php">Medication</a></li> 
-        <li><a href="contact.html">Contact Us</a></li>
-          <li><a href="../logout.php">Logout</a></li> 
-        </ul>
-      </nav>
+        <li><a href="../PharmaCare Homepage/contact.html">Contact Us</a></li>
+        <li><a href="../logout.php">Logout</a></li> 
+        
+      </ul>
+    </nav>
   </header>
