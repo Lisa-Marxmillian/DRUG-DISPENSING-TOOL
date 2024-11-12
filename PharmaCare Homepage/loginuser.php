@@ -16,6 +16,8 @@ if ($loginType == 'patient') {
     $tableName = 'pharmacist';
 } elseif ($loginType == 'administrator') {
     $tableName = 'admin';
+}elseif ($loginType == 'apiuser') {
+    $tableName = 'apiuser';
 }
 
 $stmt = $conn->prepare("SELECT * FROM $tableName WHERE username = ?");
@@ -30,36 +32,38 @@ if ($result->num_rows == 1) {
         $_SESSION['username'] = $username;
         $_SESSION['loginType'] = $loginType;
 
-            // Redirect to appropriate page
-            switch ($loginType) {
-                case 'patient':
-                    header("Location: ../patient/patientpage.php");
+        
+        switch ($loginType) {
+            case 'patient':
+                header("Location: ../patient/patientpage.php");
+                exit;
+            case 'doctor':
+                header("Location: ../doctor/doctorpage.php");
+                exit;
+            case 'pharmacist':
+                header("Location: ../pharmacist/pharmacistpage.php");
+                exit;
+            case 'administrator':
+                header("Location: ../admin/adminpage.php");
+                exit;
+            case 'administrator':
+                    header("Location: ../API/apiuserpage.php");
                     exit;
-                case 'doctor':
-                    header("Location: ../doctor/doctorpage.php");
-                    exit;
-                case 'pharmacist':
-                    header("Location: ../pharmacist/pharmacistpage.php");
-                    exit;
-                case 'administrator':
-                    header("Location: ../admin/adminpage.php");
-                    exit;
-            }
-        } else {
-            $_SESSION['login_error_message'] = "Incorrect password.";
-            header("Location: error.php");
-            exit;
         }
-    }
- else 
- {
-        $_SESSION['login_error_message'] = "User not found.";
+    } else {
+        $_SESSION['login_error_message'] = "Incorrect password.";
         header("Location: error.php");
         exit;
- }
+    }
+} else {
+    $_SESSION['login_error_message'] = "User not found.";
+    header("Location: error.php");
+    exit;
+}
 
-    $stmt->close();
-    $conn->close();
+$stmt->close();
+$conn->close();
+
 ?>
 
 

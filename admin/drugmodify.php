@@ -13,6 +13,7 @@ include ('adminheader.php');?>
           <th>Manufacturer</th>
           <th>Price</th>
           <th>Quantity</th>
+          <th>Category</th>
           <th>Edit</th>
           <th>Delete</th>
         </tr>
@@ -35,6 +36,7 @@ include ('adminheader.php');?>
             echo "<td>".$row['manufacturer']."</td>";
             echo "<td>".$row['price']."</td>";
             echo "<td>".$row['quantity']."</td>";
+            echo "<td>".$row['category']."</td>";
             echo "<td><a class='edit-btn' href='edit(drug).php?id=".$row['TradeName']."' target='_blank'>Edit</a></td>";
             echo "<td><a class='delete-btn' href='delete(drug).php?id=".$row['TradeName']."' target='_blank'>Delete</a></td>";
             echo "</tr>";
@@ -50,12 +52,13 @@ include ('adminheader.php');?>
             $Manufacturer = $_POST['manufacturer'];
             $Price = $_POST['price'];
             $Quantity = $_POST['quantity'];
+            $category = $_POST['category'];
 
-            $addSql = "INSERT INTO drug (TradeName, manufacturer, price, quantity) VALUES (?, ?, ?, ?)";
+            $addSql = "INSERT INTO drug (TradeName, manufacturer, price, quantity,category) VALUES (?, ?, ?, ?,?)";
             $addStmt = mysqli_prepare($conn, $addSql);
 
             if ($addStmt) {
-              mysqli_stmt_bind_param($addStmt, "ssss", $TradeName, $Manufacturer, $Price, $Quantity);
+              mysqli_stmt_bind_param($addStmt, "ssss", $TradeName, $Manufacturer, $Price, $Quantity,$category);
 
               if (mysqli_stmt_execute($addStmt)) {
                 echo "Drug added successfully.";

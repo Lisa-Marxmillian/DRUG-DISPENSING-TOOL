@@ -7,12 +7,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $TradeName = $_POST['TradeName'];
     $manufacturer = $_POST['manufacturer'];
     $price = $_POST['price'];
+    $category = $_POST['category']; 
 
-    $sql = "UPDATE drug SET quantity = ?, Manufacturer = ?, Price = ? WHERE TradeName = ?";
+
+    $sql = "UPDATE drug SET quantity = ?, Manufacturer = ?, Price = ?, category = ? WHERE TradeName = ?";
     $stmt = mysqli_prepare($conn, $sql);
 
     if ($stmt) {
-        mysqli_stmt_bind_param($stmt, "isss", $quantity, $manufacturer, $price, $TradeName);
+        mysqli_stmt_bind_param($stmt, "issss", $quantity, $manufacturer, $price, $category, $TradeName);
         if (mysqli_stmt_execute($stmt)) {
             echo "Drug updated successfully.";
         } else {
@@ -50,6 +52,10 @@ include ('adminheader.php');?>
     <div class="form-container">
       <label for="price">Price:</label>
       <input type="text" name="price" required class="teal-input">
+    </div>
+    <div class="form-container">
+      <label for="category">Category:</label>
+      <input type="text" name="category" required class="teal-input">
     </div>
     <div class="form-container">
       <button type="submit" class="teal-btn">Update Drug</button>
